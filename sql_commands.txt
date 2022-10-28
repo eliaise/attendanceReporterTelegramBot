@@ -1,0 +1,23 @@
+# create a new database
+CREATE DATABASE AbsoluteUnit
+
+# use the newly created database
+USE DATABASE AbsoluteUnit
+
+# create the users table
+CREATE TABLE users (
+	userId int,
+	name varchar(255),
+	title varchar(255),
+	department varchar(255),
+	role varchar(255),
+	accStatus bool
+);
+
+
+# create a user for the bot
+CREATE USER 'attendance'@'localhost' IDENTIFIED BY 'P@ssw0rd';
+
+# grant the privilege to the bot
+GRANT INSERT, UPDATE, SELECT on absoluteUnit.* TO 'attendance'@'localhost';
+
